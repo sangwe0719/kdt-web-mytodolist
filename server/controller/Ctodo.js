@@ -61,6 +61,11 @@ exports.deleteTodo = async (req, res) => {
     let isDeleted = await Todo.destroy({
       where: {
         id: { [Op.eq]: req.params.todoId },
+        // delete from todo where id = todoid;
+        // id: { [Op.gte]: req.params.todoId },
+        // delete from todo where id >= todoid;
+        // id: { [Op.gt]: req.params.todoId },
+        // delete from todo where id > todoid;
       },
       raw: true,
     });
