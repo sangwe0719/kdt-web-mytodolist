@@ -1,0 +1,18 @@
+@import '../styles/utiles';
+
+.App {
+    background-image: url(../../public/todolistimg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 12px;
+
+    .header {
+        text-align: center;
+        width: 100%;
+        text-shadow: 4px 4px 8px 18px black;
+    }
+}
+

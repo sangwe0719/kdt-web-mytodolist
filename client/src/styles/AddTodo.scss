@@ -1,0 +1,35 @@
+
+
+
+.AddTodo {
+
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+    width: 500px;
+    margin-bottom: 30px;
+
+   .input {
+    width: 300px;
+    height: 50px;
+    border:none;
+    border-bottom: thick double #32a1ce;
+
+        &:focus {
+        outline: none;
+        }
+
+    
+   }
+
+   .AddTodo_btn {
+    background-color:white;
+    border-style: none;
+   }
+
+   .plus_img {
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+}

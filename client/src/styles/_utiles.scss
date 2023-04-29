@@ -1,0 +1,11 @@
+// 다른 scss 파일에서 사용되는 sass 변수 및 mixin
+
+@mixin input($border-color) {
+    width:  100%;
+    height: auto;
+
+    padding:  17px 8px;
+    background-color:  transparent;
+    border: none;
+    border-bottom: 1px solid $border-color;
+}

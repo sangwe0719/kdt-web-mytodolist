@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+
+
 const Todo = ({item, deleteItem}) => {
     console.log(item); // {done: false, id: 1, title: "저녁먹기"}
     const [todoItem,setTodoItems] = useState(item);
@@ -46,10 +48,14 @@ const Todo = ({item, deleteItem}) => {
                 ...rest
             })
         }
+
     };
 
     return(
+        
         <div className="Todo">
+            {/* <label htmlFor="todo0">{item.title}</label> */}
+            <div className="checkbox">
             <input 
             type="checkbox" 
             id={`todo${item.id}`} 
@@ -57,16 +63,20 @@ const Todo = ({item, deleteItem}) => {
             value={`todo${item.id}`}
             defaultChecked={item.done}
             onChange={checkboxEventHandler}
+            className="checkbox"
             />
-            {/* <label htmlFor="todo0">{item.title}</label> */}
+            </div>
             <input 
             type="text" 
             value={todoItem.title} 
             onClick={offReadOnlyMode} 
             onKeyDown={enterKeyEventHandler}
             onChange={editEventHandler}
+            className= {"input" + (setTodoItems.done != false ? '_check' : '')}
             />
-            <button onClick={onDeleteButtonClick}>DELETE</button>
+            <div>
+            <button onClick={onDeleteButtonClick} className="Todo_btn" >< img className="delete_img" src={process.env.PUBLIC_URL + '/delete.png'} /></button>
+            </div>
         </div>
     );
 };

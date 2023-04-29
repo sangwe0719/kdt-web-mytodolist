@@ -1,9 +1,12 @@
 import { useState } from "react";
 
+
+
 const AddTodo = ({addItem}) => {
     const [todoItem, setTodoItems] = useState({
         title: '',
     });
+    const [number, setNumber] =useState(3);
 
     const onButtonClick = () => {
         // 1.props additem 함수 실행
@@ -13,6 +16,9 @@ const AddTodo = ({addItem}) => {
         setTodoItems({
             title:""
         });
+        
+        setNumber(number + 1);
+        
     };
 
      const onEnterKeyDown = (e) => {
@@ -22,16 +28,30 @@ const AddTodo = ({addItem}) => {
         }
 
     return (
-        <div className="AddTodo">
+        <>
+        <h1 className="header">Todo list -<span> {number} todos</span></h1>
+         <div className="AddTodo">
+            <div>
             <input
             type="text"
             placeholder="Add your new Todo"
             value={todoItem.title}
             onChange={(e) => setTodoItems({ title: e.target.value})}
             onKeyDown={onEnterKeyDown}
+            className="input"
             />
-            <button onClick={onButtonClick}>Add</button>
+            </div>
+            <div style={{display:"flex"}}>
+            <button 
+            onClick={onButtonClick} 
+            className="AddTodo_btn"
+            cla
+            >
+                < img className="plus_img" src={process.env.PUBLIC_URL + '/plus.png'} />
+                </button>
+            </div>
         </div>
+        </>
     );
 };
 
