@@ -1,9 +1,15 @@
 @import '../styles/utiles';
 
-.App {
+body {
     background-image: url(../../public/background.png);
-    background-repeat: no-repeat;
     background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 37%;
+    height: 100vh;
+}
+
+.App {
     display: flex;
     align-items: center;
     flex-direction: column;

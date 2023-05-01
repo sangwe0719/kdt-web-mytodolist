@@ -5,6 +5,9 @@ import '../src/styles/App.scss';
 import axios from 'axios';
 import '../src/styles/AddTodo.scss';
 import '../src/styles/Todo.scss';
+import {API_BASE_URL} from './app-config';
+
+console.log(API_BASE_URL);
 
 
 function App() {
@@ -13,7 +16,7 @@ function App() {
     useEffect(() => {
       const getTodos = async() => {
         const res = await axios.get('http://localhost:8000/api/todos');
-        setTodoItems(res.data)
+        setTodoItems(res.data);
       }
 
       
@@ -35,7 +38,7 @@ function App() {
     console.log(res.data);
     // ...todoItems: 기존 아이템
     // res.data: 새로운 아이템 {id: n, title: 'xx', done: false }
-    setTodoItems([...todoItems, res.data]);
+    setTodoItems([newItem, ...todoItems]);
   };
 
   // Todo 삭제하는 함수
@@ -66,6 +69,7 @@ function App() {
     <div className="App">
       {/* todo 추가 input */}
       <AddTodo addItem={addItem}/>
+      <div className="left-todos">{todoItems.length} Todos !! </div>
 
       {/* todo 목록 보이기 */}
       {todoItems.length > 0 ?(

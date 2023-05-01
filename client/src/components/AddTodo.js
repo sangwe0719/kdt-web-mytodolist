@@ -6,7 +6,6 @@ const AddTodo = ({addItem}) => {
     const [todoItem, setTodoItems] = useState({
         title: '',
     });
-    const [number, setNumber] =useState(3);
 
     const onButtonClick = () => {
         // 1.props additem 함수 실행
@@ -16,8 +15,6 @@ const AddTodo = ({addItem}) => {
         setTodoItems({
             title:""
         });
-        
-        setNumber(number + 1);
         
     };
 
@@ -29,7 +26,7 @@ const AddTodo = ({addItem}) => {
 
     return (
         <>
-        <h1 className="header">Todo list -<span> {number} todos</span></h1>
+        <h1 className="header">Todo list</h1>
          <div className="AddTodo">
             <div>
             <input
