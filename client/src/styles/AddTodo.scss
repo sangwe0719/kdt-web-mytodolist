@@ -1,35 +1,29 @@
-
-
-
 .AddTodo {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  width: 400px;
+  margin-bottom: 30px;
 
-    flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
-    width: 400px;
-    margin-bottom: 30px;
-
-   .input {
+  .input {
     width: 300px;
     height: 30px;
-    border:none;
-    border-bottom: thick double #32a1ce;
+    border: none;
+    border-bottom: thick double black;
 
-        &:focus {
-        outline: none;
-        }
+    &:focus {
+      outline: none;
+    }
+  }
 
-    
-   }
-
-   .AddTodo_btn {
-    background-color:white;
+  .AddTodo_btn {
+    background-color: white;
     border-style: none;
-   }
+  }
 
-   .plus_img {
+  .plus_img {
     width: 30px;
     height: 30px;
     border: none;
-}
+  }
 }

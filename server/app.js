@@ -11,6 +11,7 @@ app.use(express.json());
 
 const todoRouter = require('./routes/todo');
 app.use('/api', todoRouter); // 기본주소: localhost:PORT/api
+  
 
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);

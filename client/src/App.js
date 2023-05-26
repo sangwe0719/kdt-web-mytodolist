@@ -15,7 +15,7 @@ function App() {
 
     useEffect(() => {
       const getTodos = async() => {
-        const res = await axios.get('http://localhost:8000/api/todos');
+        const res = await axios.get(`${process.env.REACT_APP_DB_HOST}/api/todo`);
         setTodoItems(res.data);
       }
 
@@ -34,7 +34,7 @@ function App() {
     // setTodoItems([...todoItems, newItem ]);
 
     // axios 요청 날리기
-    const res = await axios.post('http://localhost:8000/api/todo',newItem);
+    const res = await axios.post(`${process.env.REACT_APP_DB_HOST}/api/todo`,newItem);
     console.log(res.data);
     // ...todoItems: 기존 아이템
     // res.data: 새로운 아이템 {id: n, title: 'xx', done: false }
@@ -49,7 +49,7 @@ function App() {
     // const newTodoItems= todoItems.filter((item) => item.id !== targetItem.id )
     // // 2. state 변경
     // setTodoItems(newTodoItems);
-    await axios.delete(`http://localhost:8000/api/todo/${targetItem.id}`);
+    await axios.delete(`${process.env.REACT_APP_DB_HOST}/api/todo${targetItem.id}`);
     const newTodoItems = todoItems.filter((item) => item.id !== targetItem.id);
     setTodoItems(newTodoItems);
   }
@@ -60,7 +60,7 @@ function App() {
   const updateItem = async (targetItem) => {
     console.log(targetItem); // {id: n, title: 'xxx' , done: false}
     await axios.patch(
-      `http://localhost:8000/api/todo${targetItem.id}`,
+      `${process.env.REACT_APP_DB_HOST}/api/todo${targetItem.id}`,
       targetItem
     );
   };
