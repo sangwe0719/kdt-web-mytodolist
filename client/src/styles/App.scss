@@ -1,24 +1,14 @@
-@import '../styles/utiles';
-
-body {
-    background-image: url(../../public/background.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 37%;
-    height: 100vh;
-}
+@import "../styles/utiles";
 
 .App {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 12px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 12px;
 
-    .header {
-        text-align: center;
-        width: 100%;
-        text-shadow: 4px 4px 8px 18px black;
-    }
+  .header {
+    text-align: center;
+    width: 100%;
+    text-shadow: 4px 4px 8px 18px black;
+  }
 }
-
