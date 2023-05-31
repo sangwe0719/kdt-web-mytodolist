@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const getTodos = async () => {
-      const res = await axios.get(`${process.env.REACT_APP_DB_HOST}/api/todo`);
+      const res = await axios.get(`${process.env.REACT_APP_DB_HOST}/api/todos`);
       setTodoItems(res.data);
     };
 
@@ -50,7 +50,7 @@ function App() {
     // // 2. state 변경
     // setTodoItems(newTodoItems);
     await axios.delete(
-      `${process.env.REACT_APP_DB_HOST}/api/todo${targetItem.id}`
+      `${process.env.REACT_APP_DB_HOST}/api/todo/${targetItem.id}`
     );
     const newTodoItems = todoItems.filter((item) => item.id !== targetItem.id);
     setTodoItems(newTodoItems);
@@ -62,7 +62,7 @@ function App() {
   const updateItem = async (targetItem) => {
     console.log(targetItem); // {id: n, title: 'xxx' , done: false}
     await axios.patch(
-      `${process.env.REACT_APP_DB_HOST}/api/todo${targetItem.id}`,
+      `${process.env.REACT_APP_DB_HOST}/api/todo/${targetItem.id}`,
       targetItem
     );
   };
